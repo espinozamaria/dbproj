@@ -12,12 +12,14 @@ export class AppComponent {
   public query: string;
   public movies = movies;
   public shows = shows;
+  public result;
   //
    getMovies(): void{
      for(let i=0;i<movies.length;i++){
-       console.log("The length of shows is: " , movies.length);
+       console.log("The length of movies is: " , movies.length);
      if(this.query == movies[i].title)
      {
+       this.result = this.list;
        this.list = movies[i];
        console.log("this.list: ", this.list);
      }
@@ -33,49 +35,68 @@ export class AppComponent {
   //   }
   //   }
   }
-  getShows(): void{
+  getShows(){
     //pull up the shows that include the keywords of the query typed into the input box.
     for(let i=0;i<shows.length;i++){
-      console.log("The length of shows is: " , shows.length);
+    console.log("The length of shows is: " , shows.length);
+    console.log("shows[i].title", shows[i].title);
     if(this.query == shows[i].title)
     {
+      this.result = this.list;
       this.list = shows[i];
       console.log("this.list: ", this.list);
+      return this.list;
     }
   }
 }
-
   searchPosts(){
     console.log("this.query: ", this.query);
     //console.log("The list of movie objects: ", movies);
     //this.getMovies(this.query);
-    //this.getShows();
-    //console.log("this.shows", this.shows);
+    this.getShows();
+    console.log("this.shows", this.shows);
     this.getMovies();
+    //console.log("movies[0].title", movies[0].title);
     console.log("This.movies", this.movies);
     //console.log("Logging this: ", this);
+
   }
 }
 
-let blind: {
-  title: "Blind",
-  url: "https://en.wikipedia.org/wiki/Blind_(2011_film)",
-  releasedate: 2011,
-  genre: "Thriller",
-  description: "A blind woman gives testimony about a hit-and-run case, then she is forced to confront the killer on her own.",
-  thumbnail: "https://en.wikipedia.org/wiki/Blind_(2011_film)#/media/File:Blind_(2011_film)_poster.jpg"
-};
-let loveo2o: {
-  title: "Love O2O",
-  url: "https://en.wikipedia.org/wiki/Love_O2O_(film)",
-  releasedate: 2016,
-  genre: "Romantic Comedy",
-  description: "Xiao Nai (Jing Boran) is a gaming expert, who is also the most popular student on campus. One day, he comes across the campus goddess Bei Wei Wei (Angelababy) and it was love at first sight. However, it was not Wei Wei's looks that he noticed, but her skill mastery of the online RPG game that they both play. Now, Xiao Nai must use his skills both in real life and online to capture Wei Wei's heart. But does their love have the EXP to succeed, or will this relationship never level up?",
-  thumbnail: "https://en.wikipedia.org/wiki/Love_O2O_(film)#/media/File:Love_O2O_poster.jpeg"
-}
+// let blind: {
+//   title: "Blind",
+//   url: "https://en.wikipedia.org/wiki/Blind_(2011_film)",
+//   releasedate: 2011,
+//   genre: "Thriller",
+//   description: "A blind woman gives testimony about a hit-and-run case, then she is forced to confront the killer on her own.",
+//   thumbnail: "https://en.wikipedia.org/wiki/Blind_(2011_film)#/media/File:Blind_(2011_film)_poster.jpg"
+// };
+// let loveo2o: {
+//   title: "Love O2O",
+//   url: "https://en.wikipedia.org/wiki/Love_O2O_(film)",
+//   releasedate: 2016,
+//   genre: "Romantic Comedy",
+//   description: "Xiao Nai (Jing Boran) is a gaming expert, who is also the most popular student on campus. One day, he comes across the campus goddess Bei Wei Wei (Angelababy) and it was love at first sight. However, it was not Wei Wei's looks that he noticed, but her skill mastery of the online RPG game that they both play. Now, Xiao Nai must use his skills both in real life and online to capture Wei Wei's heart. But does their love have the EXP to succeed, or will this relationship never level up?",
+//   thumbnail: "https://en.wikipedia.org/wiki/Love_O2O_(film)#/media/File:Love_O2O_poster.jpeg"
+// }
 let movies:Array<Movie> = [
-blind, loveo2o
-];
+  {
+    title: "Blind",
+    url: "https://en.wikipedia.org/wiki/Blind_(2011_film)",
+    releasedate: 2011,
+    genre: "Thriller",
+    description: "A blind woman gives testimony about a hit-and-run case, then she is forced to confront the killer on her own.",
+    thumbnail: "https://en.wikipedia.org/wiki/Blind_(2011_film)#/media/File:Blind_(2011_film)_poster.jpg"
+  },
+  {
+    title: "Love O2O",
+    url: "https://en.wikipedia.org/wiki/Love_O2O_(film)",
+    releasedate: 2016,
+    genre: "Romantic Comedy",
+    description: "Xiao Nai (Jing Boran) is a gaming expert, who is also the most popular student on campus. One day, he comes across the campus goddess Bei Wei Wei (Angelababy) and it was love at first sight. However, it was not Wei Wei's looks that he noticed, but her skill mastery of the online RPG game that they both play. Now, Xiao Nai must use his skills both in real life and online to capture Wei Wei's heart. But does their love have the EXP to succeed, or will this relationship never level up?",
+    thumbnail: "https://en.wikipedia.org/wiki/Love_O2O_(film)#/media/File:Love_O2O_poster.jpeg"
+  }
+]
 
 let shows:Array<Shows> = [{
   title: 'Cinderella and Four Knights',
@@ -83,7 +104,7 @@ let shows:Array<Shows> = [{
   releasedate: 2016,
   genre: "Romantic Comedy",
   description: "One day, their grandfather (Kim Yong-Geon) orders his 3 grandsons to attend his 5th wedding ceremony. Hyun-Min doesn't want to go, but he hires Ha-Won for 3 hours and takes her to his grandfather's wedding ceremony. His plan is to upstage his grandfather's wedding ceremony with the surprise appearance of Ha-Won. There, the grandfather witnesses Ha-Won's no-nonsense attitude towards Hyun-Min and decides to hire her as a live-in butler at the Sky House. He hopes she is able to change the ways of his grandsons.",
-  thumbnail: "http://asianwiki.com/File:Cinderella_and_Four_Knights-p2.jpg",
+  thumbnail: "https://en.wikipedia.org/wiki/Cinderella_and_Four_Knights#/media/File:Cinderella_and_Four_Knights_-_Promotional_poster.jpg",
   length: 16,
 },
 {

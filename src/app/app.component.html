@@ -12,31 +12,51 @@
         <button (click)="searchPosts()">Submit</button>
     </div>
   </li>
+  <li> <input type="text"
+              placeholder="Search List"
+              class="filter-input"
+              [(ngModel)]="searchText"></li>
   </ul>
   </div>
 </nav> <!-- End of navbar -->
 
-<div>
   <ul>
-        <li *ngFor="let show of list">
-          <div class="row container">
-            <div class="col-md-4">
-              <a href="{{show.url}}" target="_blank">
-                {{show.title}}
-                <img src="{{show.thumbnail}}" alt="">
-              </a>
-              </div>
-              <div class="col-md-4">
-                <p class="hidden"></p>
-                <p class="hidden"></p>
-                <span>Description: {{show.description}}</span>
-                <span>Number of Episodes: {{show.length}}</span>
-                <span>Release Date: {{show.releasedate | date}}</span>
-              </div>
-            </div>
-        </li>
-        <!-- <li *ngFor="let movie of movies">
-          {{movie.title}}
-        </li> -->
+    <h2>List of TV Shows</h2>
+    <li *ngFor="let show of shows">
+    <!-- | searchBy: ['data.title']: [searchText]"> -->
+
+      <div class="row container">
+        <div class="col-md-4">
+          <a href="{{show.url}}" target="_blank">
+            {{show.title}}
+            <img src={{show.thumbnail}} alt="">
+          </a>
+          </div>
+          <div class="col-md-4">
+            <p class="hidden"></p>
+            <p class="hidden"></p>
+            <span>Description: {{show.description}}</span>
+            <span>Number of Episodes: {{show.length}}</span>
+            <span>Release Date: {{show.releasedate | date}}</span>
+          </div>
+        </div>
+    </li>
+    <h2>List of Movies</h2>
+    <li *ngFor="let show of movies">
+      <div class="row container">
+        <div class="col-md-4">
+          <a href="{{show.url}}" target="_blank">
+            {{show.title}}
+            <img src={{show.thumbnail}} alt="">
+          </a>
+          </div>
+          <div class="col-md-4">
+            <p class="hidden"></p>
+            <p class="hidden"></p>
+            <span>Description: {{show.description}}</span>
+            <span>Number of Episodes: {{show.length}}</span>
+            <span>Release Date: {{show.releasedate | date}}</span>
+          </div>
+        </div>
+    </li>
   </ul>
-</div>
