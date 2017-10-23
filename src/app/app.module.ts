@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import{ SearchByPipe } from './pipes/search-by.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { MoviesComponent } from './movies/movies.component';
+import { ShowsComponent } from './shows/shows.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     SearchByPipe,
     NavbarComponent,
     HomepageComponent,
+    CategoriesComponent,
+    MoviesComponent,
+    ShowsComponent,
   ],
   imports: [
     BrowserModule,
