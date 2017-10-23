@@ -15,13 +15,15 @@
   <h2>List of All TV Shows and Movies</h2>
 </div>
   <ul>
-    <li *ngFor="let show of shows | searchBy: ['title']: [searchText]">
+    <li *ngFor="let show of shows | searchBy: ['title', 'description']: [searchText]">
     <!-- | searchBy: ['data.title']: [searchText]"> -->
       <div class="row container">
         <div class="col-md-4">
           <a href="{{show.url}}" target="_blank">
-            {{show.title}}</a>
+            <!-- {{show.url}}, target="_blank" -->
+            {{show.title}}
             <img src="{{show.thumbnail}}" alt="">
+            </a>
           </div>
           <div class="col-md-8">
             <p class="hidden"></p>
@@ -34,12 +36,12 @@
           </div>
         </div>
     </li>
-    <li *ngFor="let show of movies | searchBy: ['title']: [searchText]">
+    <li *ngFor="let show of movies | searchBy: ['title','description']: [searchText]">
       <div class="row container">
         <div class="col-md-4">
           <a href="{{show.url}}" target="_blank">
-            {{show.title}}</a>
-            <img src={{show.thumbnail}} alt="">
+            {{show.title}}
+            <img src="{{show.thumbnail}}" alt=""></a>
           </div>
           <div class="col-md-8">
             <p class="hidden"></p>

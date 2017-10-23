@@ -12,6 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { MoviesComponent } from './movies/movies.component';
 import { ShowsComponent } from './shows/shows.component';
+import { BlindComponent } from './blind/blind.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ShowsComponent } from './shows/shows.component';
     CategoriesComponent,
     MoviesComponent,
     ShowsComponent,
+    BlindComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import{ HomepageComponent } from './homepage/homepage.component';
 import{ CategoriesComponent } from './categories/categories.component';
 import { MoviesComponent } from './movies/movies.component';
 import {ShowsComponent } from './shows/shows.component';
+import { BlindComponent } from './blind/blind.component';
 
 const appRoutes: Routes = [ //THis will know where to go when to go
   {
@@ -22,6 +23,10 @@ const appRoutes: Routes = [ //THis will know where to go when to go
   {
     path: 'shows',
     component: ShowsComponent,
+  },
+  {
+    path: 'blind',
+    component: BlindComponent,
   }
 ];
 @NgModule({
