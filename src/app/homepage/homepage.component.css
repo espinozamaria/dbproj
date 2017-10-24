@@ -1,0 +1,14 @@
+.format{
+  display: block;
+  text-align: right;
+}
+img{
+  display: block;
+  margin: auto;
+  max-width: 100%;
+max-height: 100%;
+}
+.jumbotron{
+  display: block;
+  text-align: center;
+}

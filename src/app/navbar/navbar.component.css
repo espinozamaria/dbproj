@@ -1,0 +1,6 @@
+.nav-tabs>li>a.active,
+.nav-tabs>li>a.active:focus,
+.nav-tabs>li>a.active:hover {
+  color: #fff;
+  background-color: #337ab7 ;
+}

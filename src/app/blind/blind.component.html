@@ -1,0 +1,31 @@
+  <div *ngFor="let show of blind">
+  <!-- | searchBy: ['data.title']: [searchText]"> -->
+    <div class="row container-fluid">
+      <div class="jumbotron">
+          <h1>{{show.title}}</h1>
+      </div>
+      <div class="col-md-4">
+        <!-- <a href="{{show.name}}"> -->
+          <!-- {{show.url}}, target="_blank" -->
+          <img src="{{show.thumbnail}}" alt="">
+        </div>
+        <div class="col-md-8">
+          <p class="hidden"></p>
+          <p class="hidden"></p>
+          <span><strong> Description:</strong> {{show.description}}</span>
+          <br>
+          <span><strong>Number of Episodes:</strong> {{show.length}}</span>
+          <br>
+          <span><strong>Release Date:</strong> {{show.releasedate}}</span>
+          <br>
+          <span><strong>Genre:</strong> {{show.genre}}</span>
+          <br>
+          <button><a href={{show.watch}} target="_blank"> Watch Here!!</a></button>
+        </div>
+      </div>
+  </div>
+
+  <!-- title: string;
+  url:string;
+
+  name: string; -->
